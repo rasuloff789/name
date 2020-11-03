@@ -7,24 +7,22 @@ var workList = document.querySelector('.workList');
 
 elToDoForm.addEventListener('submit' , function(evt){
   evt.preventDefault();
-  var toDoInputValue = elToDoInput.value.trim();
-  elToDoInput.value = "";
-  elToDoInput.focus();
   workList.innerHTML = "" ;
-  if (toDoInputValue = ""){
+  var toDoInputValue = elToDoInput.value;
+  if (toDoInputValue === ""){
     alert(`o'zi bu narsani dasturchidan boshqasi tekshirmaydi : ) )`)
   }
   if (elDangerCheckbox.checked){
     workListArray.unshift(toDoInputValue);
   }else{
     workListArray.push(toDoInputValue);
-    
   }
   for (work of workListArray){
     var newWork = document.createElement('li');
     newWork.textContent = work ; 
     workList.appendChild(newWork);
   }
+  elToDoInput.value = "";
+  elToDoInput.focus();
   elDangerCheckbox.checked = false ;
-  
 })
