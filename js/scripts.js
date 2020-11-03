@@ -8,7 +8,7 @@ var workList = document.querySelector('.workList');
 elToDoForm.addEventListener('submit' , function(evt){
   evt.preventDefault();
   workList.innerHTML = "" ;
-  var toDoInputValue = elToDoInput.value;
+  var toDoInputValue = elToDoInput.value.trim();
   if (toDoInputValue === ""){
     alert(`o'zi bu narsani dasturchidan boshqasi tekshirmaydi : ) )`)
   }
