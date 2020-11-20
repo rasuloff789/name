@@ -24,12 +24,18 @@
       </div>
     </form>
     
-    <ol class="workList p-0 w-50 mx-auto">
-      
+    <ol class="workList p-0 w-50 mx-auto list-unstyled">
     </ol>
-    
   </div>
   
+  
+  <template id="work-template">
+    <li class="d-flex w-100 overflow-hidden align-items-center my-1 js-work">
+      <input class="form-check-input mt-0 js-checkbox" type="checkbox" name="is-urgent">
+      <span class="text-truncate w-100 flex-grow-1 js-result-text"></span>
+      <button class="btn btn-danger js-delete-btn" type="button">Delete</button>
+    </li>
+  </template>
   
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>

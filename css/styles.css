@@ -22,3 +22,7 @@ img {
 h1 {
   font-weight: bold;
 }
+
+.text-dotted {
+  text-decoration: line-through;
+}
