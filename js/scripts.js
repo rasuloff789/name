@@ -65,17 +65,21 @@ elToDoForm.addEventListener('submit' , function(evt){
   });
   renderWorks(workListArray);
   var allMessages = document.querySelectorAll(".js-result-text");
+  var  completeWork = document.querySelectorAll(".js-checkbox");
   var endWork = function(){
     workListArray.forEach(function(work , i){
       if(work.completed){
         allMessages[i].classList.add('text-dotted');
+        completeWork[i].checked = true ;
       }else{
         allMessages[i].classList.remove('text-dotted');
+        completeWork[i].checked = false ;
       };
     });
   };
   
-  var  completeWork = document.querySelectorAll(".js-checkbox");
+  endWork();
+  
   completeWork.forEach(function(btn , i ){
     btn.addEventListener('change' , function(){
       if(btn.checked){
@@ -88,9 +92,17 @@ elToDoForm.addEventListener('submit' , function(evt){
   });
   
   
-  var deleteWorkBtns = document.querySelectorAll(".js-delete-btn");
+  var deleteWorkBtns = document.querySelector(".js-delete-btn");
   var elWork = document.querySelectorAll(".js-work");
   
+  
+  // workList.addEventListener('click' , (evt , i) =>{
+  //   if (evt.target.matches(".js-delete-btn")){
+  //     // console.log("message");
+  //     workListArray.splice(i , 1);
+  //     renderWorks(workListArray);
+  //   }
+  // });
   
   deleteWorkBtns.forEach(function(btn , i ){
     btn.addEventListener('click' , function(){
