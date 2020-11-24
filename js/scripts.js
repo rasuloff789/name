@@ -92,24 +92,25 @@ elToDoForm.addEventListener('submit' , function(evt){
   });
   
   
-  var deleteWorkBtns = document.querySelector(".js-delete-btn");
-  var elWork = document.querySelectorAll(".js-work");
+  // var deleteWorkBtns = document.querySelector(".js-delete-btn");
+  // var elWork = document.querySelectorAll(".js-work");
   
   
-  // workList.addEventListener('click' , (evt , i) =>{
-  //   if (evt.target.matches(".js-delete-btn")){
-  //     // console.log("message");
-  //     workListArray.splice(i , 1);
-  //     renderWorks(workListArray);
-  //   }
-  // });
-  
-  deleteWorkBtns.forEach(function(btn , i ){
-    btn.addEventListener('click' , function(){
-      elWork[i].remove();
+  workList.addEventListener('click' , (evt , i) =>{
+    if (evt.target.matches(".js-delete-btn")){
+      // console.log("message");
       workListArray.splice(i , 1);
-    });
+      console.log(workListArray);
+      renderWorks(workListArray);
+    }
   });
+  
+  // deleteWorkBtns.forEach(function(btn , i ){
+  //   btn.addEventListener('click' , function(){
+  //     elWork[i].remove();
+  //     workListArray.splice(i , 1);
+  //   });
+  // });
   
   
   
