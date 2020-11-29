@@ -185,10 +185,10 @@ document.querySelector(".buttons").addEventListener("click" , (evt)=>{
     worksArray =  worksArray.filter((work)=>{
       return !(work.complated);
     });
+    showDltCompletedWrksBtn();
     showBtns();
     renderWorks(worksArray);
     renderEndingWorks(worksArray);
-    showDltCompletedWrksBtn();
     updateStorage();
   };
   if (evt.target.matches(".delete-all-btn")){
