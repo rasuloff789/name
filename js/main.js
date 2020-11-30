@@ -20,9 +20,12 @@ var showBtns = function(){
 if (worksArray.length <= 0){
   var ID = 1 ;
 }else if(worksArray.length === 1){
-  var ID = worksArray[0].id ;
+  var ID = worksArray[0].id + 1;
 }else {
-  var ID = worksArray[worksArray.length - 1].id;
+  var sortById = worksArray.sort((a,b)=>{
+    return  a.id - b.id ;
+  });
+  var ID = sortById[sortById.length - 1].id + 1;
 };
 
 var updateStorage = ()=>{
